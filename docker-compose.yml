@@ -1,0 +1,13 @@
+version: "3.8"
+
+services:
+  satradio:
+    build: .
+    container_name: bayern3-streamer
+    ports:
+      - "8000:8000"
+    environment:
+      - STREAM_PORT=8000
+      - STREAM_URL=http://satip.local/?src=1&freq=11053&pol=h&ro=0.35&msys=dvbs2&mtype=8psk&plts=off&sr=22000&fec=34&sid=28429&pids=0,18,120,121
+      - AUDIO_BITRATE=192k
+      - AUDIO_RATE=48000
