@@ -42,6 +42,7 @@ class RadioHandler(BaseHTTPRequestHandler):
     
     def do_HEAD(self):
         self.send_response(200)
+        self.send_header('Content-Type', 'audio/mpeg')
         self.end_headers()
 
 def run_server():
