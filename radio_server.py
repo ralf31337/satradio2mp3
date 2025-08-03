@@ -41,8 +41,12 @@ class RadioHandler(BaseHTTPRequestHandler):
                 proc.terminate()
     
     def do_HEAD(self):
+        print(f"HEAD request from: {self.client_address}, User-Agent: {self.headers.get('User-Agent')}")
         self.send_response(200)
         self.send_header('Content-Type', 'audio/mpeg')
+        self.send_header('Content-Length', '999999999')  # Dummy large value
+        self.send_header('Accept-Ranges', 'bytes')
+        self.send_header('Connection', 'close')
         self.end_headers()
 
 def run_server():
