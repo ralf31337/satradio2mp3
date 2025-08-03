@@ -39,6 +39,10 @@ class RadioHandler(BaseHTTPRequestHandler):
         finally:
             if proc.poll() is None:
                 proc.terminate()
+    
+    def do_HEAD(self):
+        self.send_response(200)
+        self.end_headers()
 
 def run_server():
     print(f"🎧 Bayern 3 On-Demand läuft auf Port {PORT}")
