@@ -8,4 +8,4 @@ COPY bayern3_server.py .
 
 ENV PORT=8000
 
-CMD ["python3", "bayern3_server.py"]
+CMD ["python3", "radio_server.py"]

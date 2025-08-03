@@ -8,9 +8,9 @@ STREAM_URL = os.environ.get("STREAM_URL")
 AUDIO_BITRATE = os.environ.get("AUDIO_BITRATE", "192k")
 AUDIO_RATE = os.environ.get("AUDIO_RATE", "48000")
 
-class Bayern3Handler(BaseHTTPRequestHandler):
+class RadioHandler(BaseHTTPRequestHandler):
     def do_GET(self):
-        if self.path != "/" and self.path != "/bayern3.mp3":
+        if self.path != "/" and self.path != "/radio.mp3":
             self.send_error(404)
             return
 
@@ -42,7 +42,7 @@ class Bayern3Handler(BaseHTTPRequestHandler):
 
 def run_server():
     print(f"🎧 Bayern 3 On-Demand läuft auf Port {PORT}")
-    server = HTTPServer(('', PORT), Bayern3Handler)
+    server = HTTPServer(('', PORT), RadioHandler)
     server.serve_forever()
 
 if __name__ == "__main__":
