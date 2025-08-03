@@ -1,0 +1,11 @@
+image:
+  repository: ghcr.io/ralf31337/satradio2mp3
+  tag: latest
+  pullPolicy: IfNotPresent
+
+service:
+  type: ClusterIP
+  port: 8000
+
+env:
+  STREAM_URL: "http://satiip.local/?src=1&freq=11053&pol=h&ro=0.35&msys=dvbs2&mtype=8psk&plts=off&sr=22000&fec=34&sid=28429&pids=0,18,120,121"

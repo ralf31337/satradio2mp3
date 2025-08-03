@@ -1,0 +1,8 @@
+questions:
+  - variable: STREAM_URL
+    label: Stream URL
+    group: App Configuration
+    schema:
+      type: string
+      default: "http://satip.local/?src=1&freq=11053&pol=h&ro=0.35&msys=dvbs2&mtype=8psk&plts=off&sr=22000&fec=34&sid=28429&pids=0,18,120,121"
+      required: true

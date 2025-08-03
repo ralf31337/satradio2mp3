@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: satradio2mp3
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: satradio2mp3
+  template:
+    metadata:
+      labels:
+        app: satradio2mp3
+    spec:
+      containers:
+        - name: satradio2mp3
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          env:
+            - name: STREAM_URL
+              value: "{{ .Values.env.STREAM_URL }}"
+          ports:
+            - containerPort: 8000

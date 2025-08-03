@@ -1,0 +1,7 @@
+name: satradio2mp3
+description: "Live DVB radio to MP3 HTTP stream via ffmpeg"
+icon_url: https://raw.githubusercontent.com/ralf31337/satradio2mp3/main/icon.png
+categories:
+  - Media
+  - Audio
+  - Streaming

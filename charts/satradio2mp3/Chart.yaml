@@ -1,0 +1,6 @@
+apiVersion: v2
+name: satradio2mp3
+description: DVB audio stream to MP3 over HTTP using ffmpeg
+type: application
+version: 0.1.0
+appVersion: "latest"
